@@ -1,0 +1,388 @@
+/* Général */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    body {
+        background: linear-gradient(135deg, #6c5ce7, #74b9ff);
+        color: white;
+        /* Adapte la couleur du texte */
+    }
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Ajout pour le scroll smooth */
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: #6c5ce7;
+    color: white;
+    padding: 40px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur de la photo */
+header .profile {
+    display: flex;
+    justify-content: center;
+    /* Centrer la photo */
+    align-items: center;
+    margin-bottom: 20px;
+    /* Espacement sous la photo */
+}
+
+/* Style de l'image de profil */
+header .profile img {
+    width: 150px;
+    /* Taille de la photo */
+    height: 150px;
+    /* Assurer un format carré */
+    border-radius: 50%;
+    /* Rend l'image ronde */
+    border: 5px solid white;
+    /* Bordure blanche */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile */
+    object-fit: cover;
+    /* Ajuste la photo pour remplir le cercle */
+}
+
+/* Style pour le titre */
+header h1 {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre subtile */
+    margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes */
+header p {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre subtile */
+    margin: 5px 0;
+}
+
+/* Style pour les liens email avec logo */
+header p a .logo {
+    height: 30px;
+    /* Taille du logo */
+    border-radius: 10px;
+    /* Transforme l'image en cercle */
+    object-fit: cover;
+    /* Ajuste l'image pour remplir le cercle */
+    margin-left: 5px;
+    /* Espace entre le texte et le logo */
+    vertical-align: middle;
+    /* Aligne le logo au milieu du texte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation au survol */
+}
+
+/* Effet au survol pour le logo */
+header p a .logo:hover {
+    transform: scale(1.1);
+    /* Zoom léger */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Ombre subtile */
+}
+
+/* Style global pour tous les liens */
+a {
+    color: inherit;
+    /* Utilise la couleur du texte parent */
+    text-decoration: none;
+    /* Supprime le soulignement */
+}
+
+/* Ajout d'un effet au survol (facultatif) */
+a:hover {
+    color: #fab1a0;
+    /* Couleur différente au survol */
+    text-decoration: underline;
+    /* Soulignement au survol */
+}
+
+/* Container global */
+main {
+    display: grid;
+    gap: 20px;
+    /* Espacement entre les sections */
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Par défaut : 1 section par ligne */
+main {
+    grid-template-columns: 1fr;
+}
+
+/* Plein écran : 2 sections par ligne */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(1, 1fr);
+        /* Deux colonnes */
+    }
+}
+
+/* Grand écran : 2 sections par ligne (optionnel) */
+@media (min-width: 1200px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        /* Trois colonnes */
+    }
+}
+
+/* Sections colorées */
+section {
+    min-height: 80vh;
+    /* Hauteur minimale de 80% de la fenêtre */
+    padding: 20px;
+    /* Ajoute un espacement intérieur */
+    display: flex;
+    /* Active Flexbox pour centrer le contenu */
+    align-items: center;
+    /* Centre verticalement le contenu */
+    justify-content: center;
+    /* Centre horizontalement le contenu */
+    box-sizing: border-box;
+    /* Inclut la bordure et le padding dans la hauteur */
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    /* Position initiale pour l'effet Parallax */
+    opacity: 0;
+    /* Section invisible par défaut */
+    transition: all 0.8s ease-in-out;
+    /* Transition fluide */
+}
+
+/* Apparition des sections */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Retour à la position normale */
+}
+
+/* Couleurs spécifiques */
+section:nth-child(1) {
+    background: #ffeaa7;
+}
+
+section:nth-child(2) {
+    background: #fab1a0;
+}
+
+section:nth-child(3) {
+    background: #81ecec;
+}
+
+section:nth-child(4) {
+    background: #74b9ff;
+}
+
+/* Titres de sections */
+section h2 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre subtile */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+/* Listes */
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin: 10px 0;
+    padding: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre subtile */
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        /* Aligne les éléments en colonne */
+        padding: 15px;
+        /* Réduit le padding pour les petits écrans */
+        text-align: center;
+        /* Centre le texte */
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        /* Réduit la taille du titre */
+        margin-bottom: 10px;
+        /* Ajoute un espacement sous le titre */
+    }
+
+    section p,
+    section ul li {
+        font-size: 1rem;
+        /* Réduit la taille du texte */
+        line-height: 1.4;
+        /* Améliore l'espacement des lignes */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #6c5ce7;
+    color: white;
+    height: 100vh;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texte du footer */
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Liens sociaux */
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Espacement entre les éléments */
+}
+
+/* Style pour les logos */
+footer .social-links .logo {
+    height: 50px;
+    /* Taille des logos */
+    border-radius: 10px;
+    /* Transforme les logos en cercle */
+    object-fit: cover;
+    /* Ajuste l'image pour remplir le cercle */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation au survol */
+}
+
+/* Effet au survol pour les logos */
+footer .social-links .logo:hover {
+    transform: scale(1.1);
+    /* Zoom léger */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Ombre subtile */
+}
+
+/* Liens textuels */
+footer .social-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Effet au survol pour les liens textuels */
+footer .social-links a:hover {
+    color: #fab1a0;
+    /* Couleur d'accent au survol */
+}
+
+/* Ajout des transitions pour Parallax et Scroll ralenti */
+html {
+    scroll-behavior: smooth;
+    /* Effet de défilement doux global */
+}
+
+.hidden {
+    opacity: 0;
+    /* Invisible au départ */
+    transform: translateY(50px);
+    /* Position initiale décalée */
+}
+
+.visible {
+    opacity: 1;
+    /* Visible quand actif */
+    transform: translateY(0);
+    /* Retour à la position normale */
+    transition: all 0.8s ease-in-out;
+    /* Transition fluide */
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6c5ce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 1s ease, transform 1.5s ease;
+}
+
+/* Spinner circulaire */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff;
+    border-top: 5px solid #ffeaa7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Contenu masqué par défaut */
+.content.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Animation du spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Effet de transformation en boule */
+@keyframes ball-transform {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
